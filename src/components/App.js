@@ -3,7 +3,7 @@ import '../styles/App.css';
 const App = () => {
   const[clock,setClock] = useState(new Date())
 
-  
+
  function updateTIme(){
    let time  =  new Date();
    setClock(time)
@@ -14,7 +14,7 @@ const App = () => {
    return ()=>{
      clearInterval(interval)
    }
-  },[])
+  })
 
   return (
     <div id="main">
