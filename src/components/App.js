@@ -9,7 +9,7 @@ const App = () => {
    return ()=>{
      clearInterval(interval)
    }
-  },[clock])
+  },[])
 
   return (
     <div id="main">
