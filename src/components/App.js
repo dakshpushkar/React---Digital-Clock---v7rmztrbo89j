@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import '../styles/App.css';
 const App = () => {
   const[clock,setClock] = useState(new Date())
+
+  
  function updateTIme(){
    let time  =  new Date();
    setClock(time)
