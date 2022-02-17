@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div id="main">
       <div className="date-time">
-        {clock.toLocaleTimeString()}
+        {clock.toLocaleString()}
       </div>
     </div>
   )
