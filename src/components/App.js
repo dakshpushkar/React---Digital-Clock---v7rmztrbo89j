@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import '../styles/App.css';
 const App = () => {
   const[clock,setClock] = useState(new Date())
+ function updateTIme(){
+   let time  =  new Date();
+   setClock(time)
+ }
+
   useEffect(()=>{
-   const interval = setInterval(()=>{
-     setClock(new Date())
-   },1000)
+   const interval = setInterval(updateTIme,1000)
    return ()=>{
      clearInterval(interval)
    }
