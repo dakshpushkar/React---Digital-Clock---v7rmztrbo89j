@@ -1,28 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import '../styles/App.css';
-const App = () => {
-  const[clock,setClock] = useState(new Date())
+import React from 'react';
+import '../styles/App.css'
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      time:new Date(),
+    }
+  }
 
-
- function updateTIme(){
-   let time  =  new Date();
-   setClock(time)
- }
-
-  useEffect(()=>{
-   const interval = setInterval(updateTIme,1000)
-   return ()=>{
-     clearInterval(interval)
-   }
-  })
+componentDidMount(){
+  this.updateTIme = setInterval(()=>{
+    this.setState({time:new Date()})
+  },1*1000)
+}
+componentWillUnmount(){
+  clearInterval(this.updateTIme)
+}
+ render(){
 
   return (
     <div id="main">
       <div className="date-time">
-        {clock.toLocaleString()}
+        {this.state.time.toLocaleString()}
       </div>
     </div>
   )
+}
 }
 
 
